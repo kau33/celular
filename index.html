@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pentest com Kali Linux e Hacking Ético | R$ 39,90</title>
+<style>
+:root{--bg:#05080c;--panel:#0b1118;--line:#16242f;--txt:#dce8f2;--mut:#7f95a8;--g:#5cc8ff;--r:#9fb8c9;--b:#6f8fb0;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#05080c;--panel:#0b1118;--line:#16242f;--txt:#dce8f2;--mut:#7f95a8;--g:#5cc8ff;--r:#9fb8c9;--b:#6f8fb0}}
+:root[data-theme="dark"]{--bg:#05080c;--panel:#0b1118;--line:#16242f;--txt:#dce8f2;--mut:#7f95a8;--g:#5cc8ff;--r:#9fb8c9;--b:#6f8fb0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--txt);font:16px/1.6 ui-monospace,"SF Mono","Cascadia Code",Consolas,Menlo,monospace;overflow-x:hidden;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0,transparent 20%,var(--bg) 85%);pointer-events:none;z-index:-1}
+section{padding:72px 20px;max-width:1040px;margin:0 auto}
+h1,h2{font-family:Impact,"Arial Narrow Bold",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
+h1{font-size:clamp(2.2rem,8vw,4.6rem)}
+h2{font-size:clamp(1.6rem,5vw,2.6rem);margin-bottom:28px}
+.g{color:var(--g);text-shadow:0 0 18px rgba(94,200,255,.45)}.r{color:var(--r)}.b{color:var(--b)}
+.tag{display:inline-block;color:var(--g);font-size:.8rem;border:1px solid var(--g);padding:2px 10px;border-radius:3px;margin-bottom:18px}
+.sub{color:var(--mut);max-width:640px;margin:20px 0;font-size:1.05rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.chips span{border:1px solid var(--line);background:var(--panel);padding:4px 12px;font-size:.78rem;border-radius:3px}
+.chips span:nth-child(3n+1){color:var(--g);border-color:var(--g)}.chips span:nth-child(3n+2){color:var(--b);border-color:var(--b)}.chips span:nth-child(3n){color:var(--r);border-color:var(--r)}
+.hero{display:grid;gap:36px;align-items:center;padding-top:48px}
+@media(min-width:860px){.hero{grid-template-columns:1.1fr 1fr}}
+.term{background:#04070a;border:1px solid var(--g);border-radius:8px;box-shadow:0 0 40px rgba(94,200,255,.18);overflow:hidden}
+.term .bar{display:flex;gap:6px;padding:10px 12px;background:var(--panel);border-bottom:1px solid var(--line)}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:var(--r)}.term .bar i:nth-child(2){background:#6f8fb0}.term .bar i:nth-child(3){background:var(--g)}
+.term pre{padding:16px;font:inherit;font-size:.82rem;min-height:290px;white-space:pre-wrap;word-break:break-word;color:var(--g)}
+.term .m{color:var(--mut)}.term .e{color:var(--r)}.term .c{color:var(--b)}
+.cur::after{content:"█";animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.btn{display:inline-block;background:var(--g);color:#04121c;font:700 1.1rem Impact,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:18px 34px;border-radius:6px;box-shadow:0 0 0 0 rgba(94,200,255,.6);animation:pulse 2.4s infinite;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+@keyframes pulse{70%{box-shadow:0 0 0 16px rgba(94,200,255,0)}100%{box-shadow:0 0 0 0 rgba(94,200,255,0)}}
+.price{max-width:520px;margin:0 auto;text-align:center;background:linear-gradient(160deg,var(--panel),#08131c);border:2px solid var(--g);border-radius:12px;padding:40px 24px;box-shadow:0 0 60px rgba(94,200,255,.25)}
+.price .l{color:var(--mut);letter-spacing:.14em;font-size:.85rem}
+.price .v{font:clamp(3.6rem,16vw,6rem)/1.1 Impact,system-ui,sans-serif;color:var(--g);text-shadow:0 0 28px rgba(94,200,255,.6);margin:10px 0}
+.price p{color:var(--mut);margin-bottom:24px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--g);padding:16px 18px;border-radius:4px}
+.card:nth-child(3n+2){border-left-color:var(--b)}.card:nth-child(3n){border-left-color:var(--r)}
+.card::before{content:"$ ";color:var(--g)}
+.quote{font-size:clamp(1.1rem,3.5vw,1.5rem);padding:16px 0 16px 18px;border-left:3px solid var(--g);margin-bottom:14px}
+.note{border:1px dashed var(--b);color:var(--mut);padding:14px 18px;margin-top:24px;font-size:.92rem;border-radius:4px}
+.final{text-align:center;border:1px solid var(--line);border-radius:12px;background:#04070a;box-shadow:0 0 60px rgba(94,200,255,.12);margin:0 auto 60px;max-width:1000px}
+.final .sub{margin-inline:auto}
+footer{text-align:center;color:var(--mut);font-size:.8rem;padding:20px 20px 40px}
+@media(prefers-reduced-motion:reduce){.btn,.cur::after{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div>
+    <span class="tag">[ ACESSO AUTORIZADO ]</span>
+    <h1>Entre no mundo <span class="g">hacker.</span> Domine o <span class="r">pentest.</span></h1>
+    <p class="sub">Aprenda a pensar como um hacker ético, explorar vulnerabilidades em ambientes autorizados e desenvolver habilidades para construir seu caminho na área de Segurança da Informação.</p>
+    <div class="chips"><span>HACKING ÉTICO</span><span>KALI LINUX</span><span>PENTEST</span><span>CYBERSECURITY</span><span>EXPLOITATION</span><span>VULNERABILIDADES</span><span>RED TEAM</span><span>TERMINAL LINUX</span></div>
+    <a class="btn" data-checkout href="#">Quero começar agora</a>
+  </div>
+  <div class="term" aria-hidden="true">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <pre id="t" class="cur"></pre>
+  </div>
+</section>
+
+<section id="preco">
+  <div class="price">
+    <div class="l">ACESSO AO CURSO COMPLETO</div>
+    <div class="v">R$ 39,90</div>
+    <p>Pagamento único.</p>
+    <a class="btn" data-checkout href="#">Quero começar agora</a>
+  </div>
+</section>
+
+<section>
+  <h2>Não seja apenas um usuário.<br><span class="g">Entenda como a segurança digital funciona.</span></h2>
+  <p class="sub" style="max-width:none">Uma formação introdutória para quem quer aprender:</p>
+  <div class="grid">
+    <div class="card">Fundamentos de Pentest</div>
+    <div class="card">Instalação e utilização do Kali Linux</div>
+    <div class="card">Comandos essenciais do terminal</div>
+    <div class="card">Reconhecimento e análise de redes</div>
+    <div class="card">Identificação de vulnerabilidades</div>
+    <div class="card">Introdução às ferramentas usadas por profissionais</div>
+    <div class="card">Noções de segurança em aplicações web</div>
+    <div class="card">Construção de um laboratório para praticar</div>
+  </div>
+  <p class="note"><strong class="b">// IMPORTANTE:</strong> o aprendizado deve acontecer em laboratórios próprios e em sistemas com autorização. Nunca teste ambientes sem permissão.</p>
+</section>
+
+<section>
+  <h2>Desperte seu <span class="r">lado hacker</span></h2>
+  <p class="quote">Pense como um hacker ético.</p>
+  <p class="quote">Aprenda a identificar falhas antes que sejam exploradas.</p>
+  <p class="quote">Conheça ferramentas utilizadas no universo do Pentest.</p>
+  <p class="quote">Transforme curiosidade por tecnologia em conhecimento prático.</p>
+  <p class="quote">Comece a construir sua jornada em cibersegurança.</p>
+</section>
+
+<section>
+  <h2>Para quem é <span class="g">este curso?</span></h2>
+  <div class="grid">
+    <div class="card">Iniciantes em tecnologia</div>
+    <div class="card">Pessoas interessadas em hacking ético</div>
+    <div class="card">Estudantes de informática</div>
+    <div class="card">Quem deseja conhecer o Kali Linux</div>
+    <div class="card">Interessados em trabalhar futuramente com Pentest</div>
+    <div class="card">Curiosos sobre Segurança da Informação</div>
+  </div>
+  <p class="note">O curso é introdutório e não promete emprego, contratação ou resultados financeiros.</p>
+</section>
+
+<section class="final">
+  <h2>Sua jornada no mundo do <span class="g">hacking ético</span> começa aqui.</h2>
+  <p class="sub">Não espere dominar tudo para começar. Dê o primeiro passo, aprenda as ferramentas e desenvolva suas habilidades em Segurança da Informação.</p>
+  <div class="price" style="border-color:var(--line);box-shadow:none;background:none;padding:10px 0 20px">
+    <div class="v" style="font-size:clamp(1.6rem,6vw,2.6rem)">R$ 39,90 — PAGAMENTO ÚNICO</div>
+    <a class="btn" data-checkout href="#">Quero acessar o curso</a>
+  </div>
+</section>
+
+<footer>© Curso de Pentest com Kali Linux e Hacking Ético · Conteúdo educacional para uso em ambientes autorizados.</footer>
+
+<script>
+// Link do checkout:
+const CHECKOUT_URL = "https://paguezy.com/checkout-v2/c?company_id=7a7c23c3-2698-4ac5-baa7-67e20948c30c&product_id=846dfb14-4dd2-46e6-a30b-48a58c764f7a";
+document.querySelectorAll("[data-checkout]").forEach(a => a.href = CHECKOUT_URL);
+
+const lines = [
+  ["m","kali@lab:~$ "],["","whoami\n"],["c","aluno-hacker-etico\n\n"],
+  ["m","kali@lab:~$ "],["","nmap -sV 192.168.56.101\n"],
+  ["m","Starting scan (lab autorizado)...\n"],
+  ["","22/tcp  open  ssh\n80/tcp  open  http\n"],
+  ["e","[!] serviço desatualizado encontrado\n\n"],
+  ["m","kali@lab:~$ "],["","echo \"pense como um hacker ético\"\n"],
+  ["c","pense como um hacker ético\n"]
+];
+const el = document.getElementById("t");
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function render(n,k){
+  let h="";
+  for(let i=0;i<n;i++){const [c,s]=lines[i];h+=`<span class="${c}">${esc(s)}</span>`}
+  if(n<lines.length){const [c,s]=lines[n];h+=`<span class="${c}">${esc(s.slice(0,k))}</span>`}
+  el.innerHTML=h;
+}
+if(still){render(lines.length,0)}else{
+  let n=0,k=0;
+  (function tick(){
+    render(n,k);
+    if(n>=lines.length) return;
+    k++;
+    if(k>lines[n][1].length){n++;k=0}
+    setTimeout(tick, lines[n] && lines[n][0]==="m" ? 12 : 28);
+  })();
+}
+</script>
+</body>
+</html>
